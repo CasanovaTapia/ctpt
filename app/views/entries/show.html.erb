@@ -55,12 +55,11 @@
   <div class="bottom-nav">
     <hr>
     <h3>
-      <%= mail_to 'ching@casanovatapia.com', 'Contact me' %>
-      or
-      <%= link_to 'previous page', :back %>
+      <%= link_to 'Back.', :back %>
+      <%= mail_to 'ching@casanovatapia.com', 'Contact me.' %>
     </h3>
   </div>
-  
+
   <p class="small">
     <% if policy(@entry).edit? %>
       <%= link_to 'Edit', edit_entry_path(@entry) %>

@@ -19,9 +19,11 @@
   <div class="bottom-nav">
     <hr>
     <h3>
-      <%= mail_to 'ching@casanovatapia.com', 'Contact me' %>
-      |
+      <%= link_to 'Back.', :back %>
+
       <%= link_to 'Digital Media.', entries_media_path %>
+
+      <%= mail_to 'ching@casanovatapia.com', 'Contact me.' %>
     </h3>
   </div>
 </div>
