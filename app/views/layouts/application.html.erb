@@ -14,7 +14,7 @@
       <%= link_to(root_path) do %>
         <%= image_tag("logochar.png") %>
       <% end %>
-      <!-- <div class="btn-group">
+      <div class="btn-group">
         <button type="button" class="btn btn-nav dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
           <span class="caret"></span>
@@ -23,13 +23,11 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Digital Media', entries_media_path %></li>
+          <li><%= link_to 'Web Development', entries_dev_path %></li>
         </ul>
-      </div> -->
+      </div>
     </nav>
     <!-- Flash messages  -->
     <% if flash[:notice] %>

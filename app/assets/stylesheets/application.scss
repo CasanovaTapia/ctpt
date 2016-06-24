@@ -91,20 +91,32 @@ nav {
   padding: 10px;
   img {
     display: block;
-    margin: 10px auto;
-    width: 200px;
+    margin-top: 10px;
+    max-width: 300px;
+    padding-left: 15vh;
   }
   .btn-group {
     position: fixed;
-    right: 5vw;
+    right: 25vw;
     top: 1vh;
     .btn-nav {
       border: none;
+      radius: 0;
       background-color: transparent;
+      color: #FF69B4;
+    }
+    .btn-nav:hover,
+    .btn-nav:focus,
+    .btn-nav:active {
+      color: #000;
     }
     .dropdown-menu {
       width: 100%;
       height: 100%;
+    }
+    li a {
+      font-family: Helvetica;
+      font-style: bold;
     }
   }
 }
@@ -122,6 +134,18 @@ nav {
   @media screen and (max-width:767px) {
     h3 {
       font-size: 16px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  nav {
+    img {
+      display: block;
+      margin-top: 10px;
+      width: 200px;
+      padding-left: 0;
     }
   }
 }
