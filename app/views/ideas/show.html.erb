@@ -2,8 +2,8 @@
   <div id="idea-show">
     <h5 class="date"><%= @idea.created_at.strftime("%d %B %Y") %></h5>
     <h3 class="title"><%= @idea.title %></h3>
-    <hr>
-    <h1 class="tagline"><%= @idea.tagline %></h1>
+    <!-- <hr> -->
+    <!-- <h1 class="tagline"><%= @idea.tagline %></h1> -->
 
     <div class="idea-body">
       <p><%= markdown_to_html @idea.body %></p>
