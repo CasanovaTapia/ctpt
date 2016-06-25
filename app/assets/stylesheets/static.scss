@@ -6,12 +6,17 @@
     letter-spacing: .02em;
   }
   .hero {
-    height: 100vh;
+    min-height: 65vh;
     h3 {
       font-size: 1.2em;
     }
     #carousel-text {
       padding: 5vh 0;
+    }
+    .more {
+      font-size: 1.2em;
+      display: block;
+      margin: 10vh 0;
     }
   }
   @media screen and (max-width:767px) {
