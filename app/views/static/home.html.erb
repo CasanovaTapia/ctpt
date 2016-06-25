@@ -1,27 +1,60 @@
 <div id="home">
-  <h3>Hi, I'm Ching.</h3>
-  <h1 id="carousel-text" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <span>I create digital experiences</span>
-    <div class="carousel-inner" role="listbox">
+  <div class="hero">
+    <h3>Hi, I'm Ching.</h3>
+    <h1 id="carousel-text" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <span>I create digital experiences</span>
+      <div class="carousel-inner" role="listbox">
 
-      <div class="item active">
-        <b>that shape identities.</b>
+        <div class="item active">
+          <b>that shape identities.</b>
+        </div>
+
+        <div class="item">
+          <b>that make you feel.</b>
+        </div>
+
+        <div class="item">
+          <b>that are sincere.</b>
+        </div>
+
+
       </div>
 
-      <div class="item">
-        <b>to make you feel.</b>
+    </h1>
+    <h3><%= link_to 'See my Digital Media.', entries_media_path %></h3>
+    <h3><%= link_to 'See my Web Applications.', entries_dev_path %></h3>
+
+    <!-- <%= link_to("#ideas") do %>
+      <%= icon('circle') %><br/>
+      <%= icon('caret-down') %>
+    <% end %> -->
+  </div>
+
+  <div id="ideas" class="row idea-list">
+    <% @ideas.each do |idea| %>
+      <div class="col-md-4">
+        <% if policy(idea).show? %>
+            <div class="idea">
+              <h3><%= idea.title %></h3>
+              <!-- <hr> -->
+              <h4>
+                <%= idea.body.truncate_words(15) %>
+                <%= link_to idea.tagline, title: 'some title', rel: 'tooltip', target: '_blank' do %>
+                  <%= icon('long-arrow-right') %>
+                <% end %>
+              </h4>
+
+            </div>
+          <% if policy(idea).edit? %>
+            <%= link_to 'Edit', edit_idea_path(idea) %>
+            <%= link_to 'Delete', idea, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+          <% end %>
+        <% end %>
       </div>
+    <% end %>
 
-      <div class="item">
-        <b>that are sincere.</b>
-      </div>
+  </div>
 
-
-    </div>
-    <br/><br/>
-  </h1>
-  <h3><%= link_to 'See my Digital Media.', entries_media_path %></h3>
-  <h3><%= link_to 'See my Web Applications.', entries_dev_path %></h3>
 
   <% if current_user && current_user.admin? %>
     <p class="small">
